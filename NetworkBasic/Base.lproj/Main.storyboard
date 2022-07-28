@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BhQ-xC-txL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T2t-vJ-ffZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -200,14 +200,30 @@
                                     <constraint firstAttribute="height" constant="44" id="A8e-yG-Dnu"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem systemItem="cancel" id="i0M-Ca-S3d"/>
+                                    <barButtonItem systemItem="stop" id="i0M-Ca-S3d"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PEM-20-Jd2"/>
+                                    <barButtonItem image="arrow.backward" catalog="system" style="plain" id="fFZ-nB-Grp">
+                                        <connections>
+                                            <action selector="goBackButtonClicked:" destination="BhQ-xC-txL" id="Gq6-GG-VIh"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="pYl-bf-PLY"/>
-                                    <barButtonItem systemItem="done" id="mbe-Fm-KHJ"/>
+                                    <barButtonItem systemItem="refresh" id="HFG-HW-sVA">
+                                        <connections>
+                                            <action selector="reloadButtonClicked:" destination="BhQ-xC-txL" id="YGb-Ws-1U6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="x5z-ZN-Pdg"/>
+                                    <barButtonItem image="arrow.forward" catalog="system" id="mbe-Fm-KHJ">
+                                        <connections>
+                                            <action selector="goForwardButtonClicked:" destination="BhQ-xC-txL" id="RPT-7T-kCD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sqt-JQ-glz"/>
                                 </items>
                             </toolbar>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtx-PS-xlc">
                                 <rect key="frame" x="0.0" y="88" width="414" height="730"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -236,10 +252,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fu-T1-WUF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2378.2608695652175" y="89.732142857142847"/>
+            <point key="canvasLocation" x="2406" y="76"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
