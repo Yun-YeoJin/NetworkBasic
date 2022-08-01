@@ -9,6 +9,7 @@ import UIKit
 
 import Alamofire
 import SwiftyJSON
+import Kingfisher
 
 class RecommendBeerViewController: UIViewController {
     
@@ -42,13 +43,17 @@ class RecommendBeerViewController: UIViewController {
                 
                 let beerName = json[0]["name"].stringValue
                 self.beerNameLabel.text = beerName
+                self.beerNameLabel.textAlignment = .center
                 
                 let beerDescription = json[0]["description"].stringValue
                 self.beerDescriptionTextView.text = beerDescription
                 
-                let image_url = URL(string: json[0]["image_url"].string ?? "https://images.punkapi.com/v2/131.png")
-                let data = try? Data(contentsOf: image_url!)
-                self.beerImageView.image = UIImage(data: data!)
+//                let image_url = URL(string: json[0]["image_url"].string ?? "https://images.punkapi.com/v2/131.png")
+//                let data = try? Data(contentsOf: image_url!)
+//                self.beerImageView.image = UIImage(data: data!)
+                
+                let image_url = URL(string: json[0]["image_url"].string ?? "")
+                self.beerImageView.kf.setImage(with: image_url)
                 
             case .failure(let error):
                 print(error)

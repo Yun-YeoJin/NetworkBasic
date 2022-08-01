@@ -26,9 +26,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUa-Bn-luU">
-                                <rect key="frame" x="135" y="693" width="144" height="144"/>
+                                <rect key="frame" x="50" y="693" width="314" height="144"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="144" id="Ics-Zd-cdl"/>
                                     <constraint firstAttribute="height" constant="144" id="MuX-I6-QRC"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
@@ -39,10 +38,10 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kb8-FD-xjF">
-                                <rect key="frame" x="100" y="268" width="214" height="201"/>
+                                <rect key="frame" x="100" y="218" width="214" height="251"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gtd-vX-kye">
-                                <rect key="frame" x="100" y="499" width="214" height="150"/>
+                                <rect key="frame" x="50" y="499" width="314" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="ILo-p4-JEo"/>
@@ -59,15 +58,15 @@
                             <constraint firstItem="Kb8-FD-xjF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="100" id="6DT-RD-rPQ"/>
                             <constraint firstItem="LlO-UK-fNE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="100" id="7pu-2U-O1a"/>
                             <constraint firstItem="KUa-Bn-luU" firstAttribute="top" secondItem="gtd-vX-kye" secondAttribute="bottom" constant="44" id="Akc-9l-N7E"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KUa-Bn-luU" secondAttribute="trailing" constant="135" id="Fxy-Qm-pKb"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gtd-vX-kye" secondAttribute="trailing" constant="100" id="MPA-Mz-3O0"/>
-                            <constraint firstItem="Kb8-FD-xjF" firstAttribute="top" secondItem="LlO-UK-fNE" secondAttribute="bottom" constant="100" id="NP2-z1-1Id"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KUa-Bn-luU" secondAttribute="trailing" constant="50" id="Fxy-Qm-pKb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gtd-vX-kye" secondAttribute="trailing" constant="50" id="MPA-Mz-3O0"/>
+                            <constraint firstItem="Kb8-FD-xjF" firstAttribute="top" secondItem="LlO-UK-fNE" secondAttribute="bottom" constant="50" id="NP2-z1-1Id"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LlO-UK-fNE" secondAttribute="trailing" constant="100" id="fgE-1h-BiS"/>
                             <constraint firstItem="gtd-vX-kye" firstAttribute="top" secondItem="Kb8-FD-xjF" secondAttribute="bottom" constant="30" id="gEy-OT-Qn8"/>
-                            <constraint firstItem="KUa-Bn-luU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="135" id="iCl-9e-mv0"/>
+                            <constraint firstItem="KUa-Bn-luU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="iCl-9e-mv0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="KUa-Bn-luU" secondAttribute="bottom" constant="25" id="oQO-XR-ITj"/>
                             <constraint firstItem="LlO-UK-fNE" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="80" id="uCg-KL-xhl"/>
-                            <constraint firstItem="gtd-vX-kye" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="100" id="un6-Ga-J08"/>
+                            <constraint firstItem="gtd-vX-kye" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="un6-Ga-J08"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Kb8-FD-xjF" secondAttribute="trailing" constant="100" id="ymF-aI-Vuh"/>
                         </constraints>
                     </view>
