@@ -24,6 +24,8 @@ class TranslateViewController: UIViewController {
       
         userInputTextView.text = textViewPlaceholderText
         userInputTextView.textColor = .opaqueSeparator
+        
+        userInputTextView.font = UIFont(name: "DalseoHealingMedium", size: 15)
     }
     
 

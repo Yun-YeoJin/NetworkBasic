@@ -25,10 +25,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        UserDefaultsHelper.helper.nickname = "고래밥"
+        
+        title = UserDefaultsHelper.helper.nickname
+        
+        UserDefaultsHelper.helper.age = 20
+        
+        
     }
     
     // ViewPresentableProtocol

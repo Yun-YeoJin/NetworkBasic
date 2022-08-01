@@ -123,7 +123,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bonusNumberLabel" destination="i81-bv-wGr" id="0Vv-Up-gbY"/>
+                        <outlet property="fifthNumberLabel" destination="bJx-BB-Wao" id="Qoi-16-xsO"/>
+                        <outlet property="firstNumberLabel" destination="f8Y-Q5-RMJ" id="ZOD-3a-7hU"/>
+                        <outlet property="fourthNumberLabel" destination="4ml-Wg-q7q" id="eNC-xg-Sb2"/>
                         <outlet property="numberTextField" destination="XJN-Yx-e97" id="a4n-MO-3ut"/>
+                        <outlet property="secondNumberLabel" destination="Ng3-gH-pJx" id="BN3-TP-nYx"/>
+                        <outlet property="sixthNumberLabel" destination="wB0-Fu-ia6" id="JwD-Sv-ufx"/>
+                        <outlet property="thirdNumberLabel" destination="nLJ-GS-Are" id="oaY-b7-PUh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWr-f2-OjA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -222,8 +229,8 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sqt-JQ-glz"/>
                                 </items>
                             </toolbar>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtx-PS-xlc">
-                                <rect key="frame" x="0.0" y="88" width="414" height="730"/>
+                            <wkWebView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qtx-PS-xlc">
+                                <rect key="frame" x="0.0" y="83" width="414" height="730"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -253,6 +260,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fu-T1-WUF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2406" y="76"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="evc-rz-w4d">
+            <objects>
+                <viewController storyboardIdentifier="LocationViewController" id="Vgx-0g-cdM" customClass="LocationViewController" customModule="NetworkBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="122-HZ-xMw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MP-Bd-ZsU">
+                                <rect key="frame" x="20" y="64" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WGT-Go-VgQ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Local Notification"/>
+                                <connections>
+                                    <action selector="notificationButtonClicked:" destination="Vgx-0g-cdM" eventType="touchUpInside" id="2H0-Zi-Lpe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ym4-5Y-hKK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ym4-5Y-hKK" firstAttribute="trailing" secondItem="4MP-Bd-ZsU" secondAttribute="trailing" constant="20" id="Ibj-XM-aQx"/>
+                            <constraint firstItem="4MP-Bd-ZsU" firstAttribute="top" secondItem="ym4-5Y-hKK" secondAttribute="top" constant="20" id="RjT-H3-anu"/>
+                            <constraint firstItem="4MP-Bd-ZsU" firstAttribute="leading" secondItem="ym4-5Y-hKK" secondAttribute="leading" constant="20" id="iAz-u9-zdX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AyD-pp-NMK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3190" y="76"/>
         </scene>
     </scenes>
     <resources>
