@@ -7,12 +7,15 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+
 //UIButton, UITextField -> @IBAction
 //UITextView, UISearchBar, UIPickerView -> 액션 불가
 //UIResponderChain >
 
 class TranslateViewController: UIViewController {
-
+    
     @IBOutlet weak var userInputTextView: UITextView!
     
     let textViewPlaceholderText = "번역하고 싶은 문장을 작성해보세요."
@@ -21,18 +24,51 @@ class TranslateViewController: UIViewController {
         super.viewDidLoad()
         
         userInputTextView.delegate = self //위 텍스트뷰에만 delegate = self로 연결이 되어있기 때문에.
-      
+        
         userInputTextView.text = textViewPlaceholderText
         userInputTextView.textColor = .opaqueSeparator
         
         userInputTextView.font = UIFont(name: "DalseoHealingMedium", size: 15)
+        
+        requestTranslate()
     }
     
-
+    // MARK: POST 방식
+    func requestTranslate() {
+        
+        let url = EndPoint.translateURL
+        
+        let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
+        
+        let parameter = ["source": "ko","target": "en","text": "안녕하세요 저는 과자를 좋아합니다."]
+        
+        AF.request(url, method: .post, parameters: parameter, headers: header).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                let statusCode = response.response?.statusCode ?? 500
+                
+                if statusCode == 200 {
+                    let translateMessage = json["message"]["result"]["translatedText"].string
+                    self.userInputTextView.text = translateMessage
+                } else {
+                    self.userInputTextView.text = json["errorMessage"].stringValue
+                }
+                
+                
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
 }
 
 extension TranslateViewController: UITextViewDelegate {
-   
+    
     // 텍스트뷰의 텍스트가 변할 때마다 호출
     func textViewDidChange(_ textView: UITextView) {
         print(textView.text.count)

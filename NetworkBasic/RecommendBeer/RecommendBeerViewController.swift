@@ -31,7 +31,6 @@ class RecommendBeerViewController: UIViewController {
     
     func requestBeerAPI() {
         
-        //AF: 200-299 status Code
         let url = "https://api.punkapi.com/v2/beers/random"
         
         AF.request(url, method: .get).validate().responseJSON { response in
@@ -47,10 +46,6 @@ class RecommendBeerViewController: UIViewController {
                 
                 let beerDescription = json[0]["description"].stringValue
                 self.beerDescriptionTextView.text = beerDescription
-                
-//                let image_url = URL(string: json[0]["image_url"].string ?? "https://images.punkapi.com/v2/131.png")
-//                let data = try? Data(contentsOf: image_url!)
-//                self.beerImageView.image = UIImage(data: data!)
                 
                 let image_url = URL(string: json[0]["image_url"].string ?? "")
                 self.beerImageView.kf.setImage(with: image_url)

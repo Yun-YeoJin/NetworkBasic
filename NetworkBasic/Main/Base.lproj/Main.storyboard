@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T2t-vJ-ffZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X6S-z0-o5G">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -38,6 +38,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="movieSearchBar" destination="l4f-Jv-dE4" id="BZ4-ML-1FS"/>
                         <outlet property="searchTableView" destination="hri-gB-lxl" id="tKx-f9-5bK"/>
                     </connections>
                 </viewController>
@@ -61,6 +62,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="movieSearchBar:" destination="ZaP-NN-6H5" eventType="editingDidEnd" id="Qnm-6L-PJR"/>
                                     <action selector="numberTextField:" destination="ZaP-NN-6H5" eventType="editingDidEnd" id="Iyo-pY-FDt"/>
                                 </connections>
                             </textField>
@@ -293,6 +295,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AyD-pp-NMK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3190" y="76"/>
+        </scene>
+        <!--Image Search View Controller-->
+        <scene sceneID="dVJ-1v-waT">
+            <objects>
+                <viewController storyboardIdentifier="ImageSearchViewController" id="X6S-z0-o5G" customClass="ImageSearchViewController" customModule="NetworkBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5jh-4C-cX5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="EDQ-8P-Ogj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wzc-wn-cgg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3982.6086956521744" y="75.669642857142847"/>
         </scene>
     </scenes>
     <resources>
