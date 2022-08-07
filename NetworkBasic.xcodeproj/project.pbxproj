@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE4A3E08289B4FDE00300ABD /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = AE4A3E07289B4FDE00300ABD /* JGProgressHUD */; };
+		AE4A3E21289CB3F600300ABD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4A3E20289CB3F600300ABD /* APIManager.swift */; };
 		AE894F8328920CD800534218 /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE894F8228920CD800534218 /* ViewPresentableProtocol.swift */; };
 		AE894F852892236E00534218 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE894F842892236E00534218 /* LottoViewController.swift */; };
 		AE894F872892305500534218 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE894F862892305500534218 /* TranslateViewController.swift */; };
@@ -16,7 +18,6 @@
 		AE894F92289384D600534218 /* DalseoHealingBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE894F8F289384D600534218 /* DalseoHealingBold.otf */; };
 		AE894F93289384D600534218 /* DalseoDarling.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE894F90289384D600534218 /* DalseoDarling.otf */; };
 		AE894F952897528200534218 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE894F942897528200534218 /* ReusableViewProtocol.swift */; };
-		AE894F98289757A300534218 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE894F97289757A300534218 /* Constant.swift */; };
 		AE894F9A28975FAB00534218 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE894F9928975FAB00534218 /* UserDefaultsHelper.swift */; };
 		AE894F9D28977CD400534218 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AE894F9C28977CD400534218 /* Alamofire */; };
 		AE894FA028977D0000534218 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AE894F9F28977D0000534218 /* SwiftyJSON */; };
@@ -33,6 +34,9 @@
 		AEC5A8D62890E1FC00F080B3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC5A8D52890E1FC00F080B3 /* SearchViewController.swift */; };
 		AEC5A8D92890E4D400F080B3 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC5A8D72890E4D400F080B3 /* ListTableViewCell.swift */; };
 		AEC5A8DA2890E4D400F080B3 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC5A8D82890E4D400F080B3 /* ListTableViewCell.xib */; };
+		AED4006E289AC1E800705D27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4006D289AC1E800705D27 /* Constants.swift */; };
+		AED40071289B467300705D27 /* ImageSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4006F289B467300705D27 /* ImageSearchCollectionViewCell.swift */; };
+		AED40072289B467300705D27 /* ImageSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED40070289B467300705D27 /* ImageSearchCollectionViewCell.xib */; };
 		AED5CEB62898BD1D00E96202 /* BoxOfficeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED5CEB52898BD1D00E96202 /* BoxOfficeModel.swift */; };
 		AED5CEBB2899570500E96202 /* BeerList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED5CEBA2899570500E96202 /* BeerList.storyboard */; };
 		AED5CEBD2899573300E96202 /* BeerListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED5CEBC2899573300E96202 /* BeerListCollectionViewCell.swift */; };
@@ -43,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE4A3E20289CB3F600300ABD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		AE894F8228920CD800534218 /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
 		AE894F842892236E00534218 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		AE894F862892305500534218 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +57,6 @@
 		AE894F8F289384D600534218 /* DalseoHealingBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DalseoHealingBold.otf; sourceTree = "<group>"; };
 		AE894F90289384D600534218 /* DalseoDarling.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DalseoDarling.otf; sourceTree = "<group>"; };
 		AE894F942897528200534218 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
-		AE894F97289757A300534218 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		AE894F9928975FAB00534218 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		AE894FA12897AA7D00534218 /* RecommendBeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendBeerViewController.swift; sourceTree = "<group>"; };
 		AE894FA42897AAB400534218 /* RecommendBeer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecommendBeer.storyboard; sourceTree = "<group>"; };
@@ -68,6 +72,9 @@
 		AEC5A8D52890E1FC00F080B3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		AEC5A8D72890E4D400F080B3 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		AEC5A8D82890E4D400F080B3 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		AED4006D289AC1E800705D27 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AED4006F289B467300705D27 /* ImageSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		AED40070289B467300705D27 /* ImageSearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		AED5CEB52898BD1D00E96202 /* BoxOfficeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeModel.swift; sourceTree = "<group>"; };
 		AED5CEBA2899570500E96202 /* BeerList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BeerList.storyboard; sourceTree = "<group>"; };
 		AED5CEBC2899573300E96202 /* BeerListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -82,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE4A3E08289B4FDE00300ABD /* JGProgressHUD in Frameworks */,
 				AE894FA82897FB9100534218 /* Kingfisher in Frameworks */,
 				AE894FA028977D0000534218 /* SwiftyJSON in Frameworks */,
 				AE894F9D28977CD400534218 /* Alamofire in Frameworks */,
@@ -91,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE4A3E1F289CB3D200300ABD /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				AE4A3E20289CB3F600300ABD /* APIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
 		AE894F8128920CA600534218 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +137,7 @@
 		AE894F962897577C00534218 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				AE894F97289757A300534218 /* Constant.swift */,
+				AED4006D289AC1E800705D27 /* Constants.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -155,6 +171,7 @@
 		AEC5A8BD2890DD8700F080B3 /* NetworkBasic */ = {
 			isa = PBXGroup;
 			children = (
+				AE4A3E1F289CB3D200300ABD /* APIManager */,
 				AEC5A8BE2890DD8700F080B3 /* AppDelegate.swift */,
 				AEC5A8CA2890DD8900F080B3 /* Assets.xcassets */,
 				AED5CEB7289956C900E96202 /* BeerList */,
@@ -189,6 +206,8 @@
 				AEC5A8C22890DD8700F080B3 /* ViewController.swift */,
 				AEC5A8C42890DD8700F080B3 /* Main.storyboard */,
 				AED5CF1E289A094400E96202 /* ImageSearchViewController.swift */,
+				AED4006F289B467300705D27 /* ImageSearchCollectionViewCell.swift */,
+				AED40070289B467300705D27 /* ImageSearchCollectionViewCell.xib */,
 				AE894F8A28935D4C00534218 /* LocationViewController.swift */,
 				AE894F8828923AA000534218 /* WebViewController.swift */,
 				AE894F842892236E00534218 /* LottoViewController.swift */,
@@ -221,6 +240,7 @@
 				AE894F9C28977CD400534218 /* Alamofire */,
 				AE894F9F28977D0000534218 /* SwiftyJSON */,
 				AE894FA72897FB9100534218 /* Kingfisher */,
+				AE4A3E07289B4FDE00300ABD /* JGProgressHUD */,
 			);
 			productName = NetworkBasic;
 			productReference = AEC5A8BB2890DD8700F080B3 /* NetworkBasic.app */;
@@ -254,6 +274,7 @@
 				AE894F9B28977CD400534218 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				AE894F9E28977D0000534218 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				AE894FA62897FB9100534218 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				AE4A3E06289B4FDE00300ABD /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = AEC5A8BC2890DD8700F080B3 /* Products */;
 			projectDirPath = "";
@@ -269,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED40072289B467300705D27 /* ImageSearchCollectionViewCell.xib in Resources */,
 				AED5CF1D2899FEBD00E96202 /* .gitignore in Resources */,
 				AEC5A8CE2890DD8900F080B3 /* LaunchScreen.storyboard in Resources */,
 				AE894F92289384D600534218 /* DalseoHealingBold.otf in Resources */,
@@ -300,14 +322,16 @@
 				AE894F952897528200534218 /* ReusableViewProtocol.swift in Sources */,
 				AE894F8B28935D4C00534218 /* LocationViewController.swift in Sources */,
 				AEC5A8BF2890DD8700F080B3 /* AppDelegate.swift in Sources */,
+				AED4006E289AC1E800705D27 /* Constants.swift in Sources */,
 				AE894F872892305500534218 /* TranslateViewController.swift in Sources */,
-				AE894F98289757A300534218 /* Constant.swift in Sources */,
 				AED5CEBF2899585600E96202 /* BeerListViewController.swift in Sources */,
 				AED5CEC128995E9300E96202 /* BeerList.swift in Sources */,
 				AE894F852892236E00534218 /* LottoViewController.swift in Sources */,
 				AED5CEBD2899573300E96202 /* BeerListCollectionViewCell.swift in Sources */,
 				AE894FA22897AA7E00534218 /* RecommendBeerViewController.swift in Sources */,
 				AEC5A8C12890DD8700F080B3 /* SceneDelegate.swift in Sources */,
+				AED40071289B467300705D27 /* ImageSearchCollectionViewCell.swift in Sources */,
+				AE4A3E21289CB3F600300ABD /* APIManager.swift in Sources */,
 				AEC5A8D92890E4D400F080B3 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +554,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AE4A3E06289B4FDE00300ABD /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		AE894F9B28977CD400534218 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -557,6 +589,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AE4A3E07289B4FDE00300ABD /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE4A3E06289B4FDE00300ABD /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
 		AE894F9C28977CD400534218 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AE894F9B28977CD400534218 /* XCRemoteSwiftPackageReference "Alamofire" */;

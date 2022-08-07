@@ -12,25 +12,31 @@ import SwiftyJSON
 
 class LottoViewController: UIViewController {
     
-    let numberList: [Int] = Array(1...1026).reversed()
     
     @IBOutlet weak var numberTextField: UITextField!
     
-    //@IBOutlet weak var lottoPickerView: UIPickerView!
+    @IBOutlet var numberLabel: [UILabel]!
+    
+    @IBOutlet weak var bonusnumberLabel: UILabel!
+    
+    @IBOutlet weak var roundLabel: UILabel! {
+        didSet {
+            roundLabel.textAlignment = .center
+        }
+    }
+    
+    let userDefaults = UserDefaults.standard
     
     var lottoPickerView = UIPickerView() //인스턴스
     
-    @IBOutlet weak var firstNumberLabel: UILabel!
-    @IBOutlet weak var secondNumberLabel: UILabel!
-    @IBOutlet weak var thirdNumberLabel: UILabel!
-    @IBOutlet weak var fourthNumberLabel: UILabel!
-    @IBOutlet weak var fifthNumberLabel: UILabel!
-    @IBOutlet weak var sixthNumberLabel: UILabel!
-    @IBOutlet weak var bonusNumberLabel: UILabel!
+    var numberList: [String] = []
+    var reverseNumberArray: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        reverseNumberArray = Array(1...1027).reversed()
         lottoPickerView.delegate = self
         lottoPickerView.dataSource = self
         
@@ -39,6 +45,8 @@ class LottoViewController: UIViewController {
         numberTextField.inputView = lottoPickerView
         numberTextField.tintColor = .clear
         numberTextField.textContentType = .oneTimeCode
+        numberTextField.textAlignment = .center
+        numberTextField.delegate = self
         
         requestLottoAPI(number: calculateDateForLotto()/7 + 1)
     }
@@ -60,44 +68,48 @@ class LottoViewController: UIViewController {
         
         return Int(components.day ?? 0)
     }
+    
     func requestLottoAPI(number: Int) {
         
-        //AF: 200-299 status Code
-        let url = "\(EndPoint.lottoURL)&drwNo=\(number)"
-        
-        AF.request(url, method: .get).validate(statusCode: 200..<300).responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                
-                let firstNumber = json["drwtNo1"].stringValue
-                self.firstNumberLabel.text = firstNumber
-                let secondNumber = json["drwtNo2"].stringValue
-                self.secondNumberLabel.text = secondNumber
-                let thirdNumber = json["drwtNo3"].stringValue
-                self.thirdNumberLabel.text = thirdNumber
-                let fourthNumber = json["drwtNo4"].stringValue
-                self.fourthNumberLabel.text = fourthNumber
-                let fifthNumber = json["drwtNo5"].stringValue
-                self.fifthNumberLabel.text = fifthNumber
-                let sixthNumber = json["drwtNo6"].stringValue
-                self.sixthNumberLabel.text = sixthNumber
-                let bonusNumber = json["bnusNo"].stringValue
-                self.bonusNumberLabel.text = bonusNumber
-                
-                
-                let date = json["drwNoDate"].stringValue
-        
-                self.numberTextField.text = date
-                self.numberTextField.textAlignment = .center
-                
-            case .failure(let error):
-                print(error)
+        if userDefaults.array(forKey: "\(number)") != nil {
+            numberList = userDefaults.array(forKey: "\(number)") as! [String]
+            
+            for number in 0..<self.numberLabel.count {
+                self.numberLabel[number].text = "\(self.numberList[number])"
+            }
+            self.bonusnumberLabel.text = "\(self.numberList[6])"
+            self.numberTextField.text = self.numberList[7]
+            self.roundLabel.text = "\(self.numberList[8])회차"
+            
+        } else {
+            
+            var roundArray: [String] = []
+            let url = "\(EndPoint.lottoURL)&drwNo=\(number)"
+            AF.request(url, method: .get).validate().responseData { response in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    
+                    for number in 0...5 {
+                        self.numberLabel[number].text = json["drwtNo\(number + 1)"].stringValue
+                        roundArray.append(json["drwtNo\(number + 1)"].stringValue)
+                    }
+                    self.bonusnumberLabel.text = json["bnusNo"].stringValue
+                    roundArray.append(json["bnusNo"].stringValue)
+                    let date = json["drwNoDate"].stringValue
+                    roundArray.append(date)
+                    let round = json["drwNo"].intValue
+                    roundArray.append(String(round))
+                    
+                    self.userDefaults.set(roundArray, forKey: "\(number)")
+                    
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
+        
     }
-    
 }
 
 extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -108,18 +120,27 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     // PickerView의 구성 요소의 행 수를 반환하는 함수
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return numberList.count
+        return reverseNumberArray.count
     }
     // PickerView의 지정된 구성 요소 행이 선택되었을 때
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        requestLottoAPI(number: numberList[row])
-      
- 
+        requestLottoAPI(number: reverseNumberArray[row])
     }
     // PickerView의 구성 요소 행의 이름
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(numberList[row])회차"
+        return "\(reverseNumberArray[row])회차"
     }
     
 }
+
+extension LottoViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        numberTextField.isUserInteractionEnabled = false
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        numberTextField.isUserInteractionEnabled = true
+    }
+}
+

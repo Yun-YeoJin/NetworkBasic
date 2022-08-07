@@ -9,6 +9,7 @@ import UIKit
 
 import Alamofire
 import SwiftyJSON
+import JGProgressHUD
 
 /*
  Swift Protocol
@@ -34,6 +35,8 @@ extension UIViewController {
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //ProgressHUD
+    let hud = JGProgressHUD()
     
     @IBOutlet weak var movieSearchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
@@ -73,13 +76,17 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func requestBoxOffice(text: String) {
         
+        
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
+
         list.removeAll()
         
         //AF: 200-299 status Code
         //인증키 제한
         let url = "\(EndPoint.boxOfficeURL)key=\(APIKey.BOXOFFICE)&targetDt=\(text)"
         
-        AF.request(url, method: .get).validate().responseJSON { response in
+        AF.request(url, method: .get).validate().responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -97,6 +104,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
                 
                 self.searchTableView.reloadData()
+                self.hud.dismiss()
                 
                 print(self.list)
             case .failure(let error):

@@ -9,7 +9,8 @@ import UIKit
 
 class LocationViewController: UIViewController {
     
-  
+    
+    @IBOutlet weak var imageView: UIImageView!
     // Notification 1.
     let notificationCenter = UNUserNotificationCenter.current()
     
@@ -23,6 +24,24 @@ class LocationViewController: UIViewController {
             for name in UIFont.fontNames(forFamilyName: family) {
                 print(name)
             }
+        }
+        
+        
+    }
+    @IBAction func downloadImageButtonClicked(_ sender: UIButton) {
+        
+        let url = "https://apod.nasa.gov/apod/image/2208/M13_final2_sinfirma.jpg"
+        
+        DispatchQueue.global().async { //동시에 여러 작업이 가능하게끔 해준다.
+            
+            print("2", Thread.isMainThread)
+            let data = try! Data(contentsOf: URL(string: url)!) //url을 data에 넣기
+            let image = UIImage(data: data)
+            DispatchQueue.main.async {
+                print("3", Thread.isMainThread)
+                self.imageView.image = image
+            }
+          
         }
         
         
